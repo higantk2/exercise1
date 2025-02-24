@@ -1,6 +1,45 @@
 // Handle click events on navigation links
 const navbarLinks = document.querySelectorAll("nav a");
 
+const displayText = document.querySelector("#textDisplay");
+
+function displayTextFn() {
+    const text = [
+        { textDisplay: "Roblox Player".split("") },
+        { textDisplay: "Anime Defender".split("") },
+        { textDisplay: "Power Ranger".split("") }
+    ];
+
+    let i = 0; 
+    let j = 0; 
+
+    function displayNextLetter() {
+        if (j < text.length) { 
+            if (i < text[j].textDisplay.length) { 
+                displayText.textContent += text[j].textDisplay[i];
+                i++;
+                setTimeout(displayNextLetter, 300);
+            } else {
+                i = 0; 
+                j++; 
+                setTimeout(() => {
+                    displayText.textContent = ""; 
+                    displayNextLetter();
+                }, 1000); 
+
+            }
+        }
+        else{
+            j = 0;
+            // i = 0;
+            setTimeout(displayNextLetter, 1000);
+    }
+}
+
+    // displayText.textContent = "";
+    displayNextLetter(); 
+}
+
 
 navbarLinks.forEach(link => {
     link.addEventListener("click", (e) => {
@@ -64,3 +103,4 @@ sections.forEach(section => {
 
 
 
+displayTextFn();

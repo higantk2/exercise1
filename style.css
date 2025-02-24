@@ -325,9 +325,9 @@ span {
 
 
 .typing-text span::before {
-    content: "Power Rangers";
+    /* content: "Power Rangers"; */
     color: #89CFF0;
-    animation: words 20s infinite;
+    /* animation: words 20s infinite; */
 }
 
 
@@ -350,7 +350,7 @@ span {
 }
 
 
-@keyframes words {
+/* @keyframes words {
     0%, 20% {
         content: "Roblox Player";
     }
@@ -360,7 +360,7 @@ span {
     41%, 60% {
         content: "Anime Defender";
  }
-}
+} */
 
 
 /* Responsive Styles */
